@@ -21,32 +21,42 @@ const cardSearch = ({ cep, erro }: ResultProps) => {
                                 <div>
                                     <span className="label">Rua: </span><span className="info">{cep.logradouro}</span>
                                 </div>
-                                <ClipBoard text={cep.logradouro} />
+                                <div>
+                                    <ClipBoard text={cep.logradouro} />
+                                </div>
                             </div>
                             <div className="item">
                                 <div>
                                     <span className="label">Bairro: </span><span className="info">{cep.bairro}</span>
                                 </div>
-                                <ClipBoard text={cep.bairro} />
+                                <div>
+                                    <ClipBoard text={cep.bairro} />
+                                </div>
                             </div>
                             <div className="item">
                                 <div>
                                     <span className="label">Cidade: </span><span className="info">{cep.localidade}</span>
                                 </div>
-                                <ClipBoard text={cep.localidade} />
+                                <div>
+                                    <ClipBoard text={cep.localidade} />
+                                </div>
                             </div>
                             <div className="item">
                                 <div>
                                     <span className="label">UF: </span><span className="info">{cep.uf}</span>
                                 </div>
-                                <ClipBoard text={cep.uf} />
+                                <div>
+                                    <ClipBoard text={cep.uf} />
+                                </div>
                             </div>
                             {cep.complemento && (
                                 <div className="item">
                                     <div>
                                         <span className="label">Complemento: </span><span className="info">{cep.complemento}</span>
                                     </div>
-                                    <ClipBoard text={cep.complemento} />
+                                    <div>
+                                        <ClipBoard text={cep.complemento} />
+                                    </div>
                                 </div>
                             )}
                         </>

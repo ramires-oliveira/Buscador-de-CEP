@@ -6,6 +6,7 @@ interface CardSearchProps {
 
 export const Container = styled.div<CardSearchProps>`
     width: 60%;
+    max-width: 680px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,6 +28,7 @@ export const Container = styled.div<CardSearchProps>`
         .item{
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .label{
@@ -49,4 +51,19 @@ export const Container = styled.div<CardSearchProps>`
             }
         }
     }
+
+    @media (min-width: 550px) and (max-width: 800px){
+        width: 80%;
+    }
+
+    @media (max-width: 550px){
+        width: 100%;
+
+        .content {
+            .label { font-size: 1rem; }
+            .info { font-size: 1rem; }
+        }
+    }
+    
+      
 `;
