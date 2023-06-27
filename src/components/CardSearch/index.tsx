@@ -1,13 +1,13 @@
-type SearchProps = {
-    loadCep: (numberCep: string) => Promise<void>;
-    handleClear: () => void;
-}
-
 import { Container, SearchContent, SearchDicas, Header } from './styles';
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GiBrazil } from "react-icons/gi";
 import { AiOutlineClear } from "react-icons/ai";
+
+type SearchProps = {
+    loadCep: (numberCep: string) => Promise<void>;
+    handleClear: () => void;
+}
 
 const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
 
@@ -23,9 +23,9 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
         const inputValue = event.target.value;
         const newValue = inputValue.replace(/[^0-9-]/g, ''); // Remove todos os caracteres que não sejam números ou '-'
         setNumberCep(newValue)
-      };
+    };
 
-    const handleClearCep = () =>{
+    const handleClearCep = () => {
         setNumberCep("");
         handleClear();
     }
@@ -50,7 +50,6 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
                 <span>Digite o CEP utilizando 8 digitos, com ou sem hífen (-).</span>
                 <span>Ex: 37130000 ou 37130-000</span>
             </SearchDicas>
-
         </Container>
     )
 }

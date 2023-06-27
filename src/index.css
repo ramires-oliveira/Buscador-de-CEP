@@ -6,8 +6,11 @@
 }
 
 body {
+  min-height: 100vh;
+  width: 100vw;
   padding: 2rem;
-  background-color: #0e1129;
+  background: linear-gradient(to top, #000000, #333333);
+  background-repeat: no-repeat;
 
   @media (max-width: 300px){
     padding: 1rem;

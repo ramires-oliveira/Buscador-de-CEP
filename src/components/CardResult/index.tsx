@@ -9,7 +9,7 @@ type ResultProps = {
 }
 
 const cardSearch = ({ cep, erro }: ResultProps) => {
-    const cor = erro ? "#FF2020" : "coral";
+    const cor = erro ? "rgba(255, 0, 0, 0.6)" : "coral";
 
     if (cep !== null || erro !== null) {
         return (
@@ -73,8 +73,6 @@ const cardSearch = ({ cep, erro }: ResultProps) => {
     } else {
         return null;
     }
-
-
 }
 
 export default cardSearch;

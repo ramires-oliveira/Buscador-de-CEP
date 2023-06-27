@@ -16,26 +16,26 @@ const spinAnimation = keyframes`
 `;
 
 export const Button = styled.button<ClipBoardProps>`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: ${props => props.cor};
-    border: none;
-    width: 5rem;
-    border-radius: 5px;
-    height: 2rem;
-    margin-left: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${props => props.cor};
+  border: none;
+  width: 5rem;
+  border-radius: 5px;
+  height: 2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
 
-    ${props => props.cor === 'white' && `
-      color: black;
-      
-      &:hover{
-        background-color: #f2f2f2;
-      }
-    `}
+  ${props => props.cor === 'white' && `
+    color: black;
+    
+    &:hover{
+      background-color: #f2f2f2;
+    }
+  `}
 `;
 
 export const LoadingIcon = styled(LuLoader2)`

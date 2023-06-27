@@ -3,15 +3,17 @@ import CardResult from "./components/CardResult";
 import { useState } from "react";
 import { CepProps } from "./types/cep";
 import './App.css'
+import Loading from "./components/Loading";
 
 function App() {
 
   const [cep, setCep] = useState<CepProps | null>(null);
   const [error, setError] = useState<string | null>(null);
-
+  const [removeLoading, setRemoveLoading] = useState(false);
+  
   const loadCep = async (numberCep: string) => {
+    setRemoveLoading(true)
     try {
-      console.log(numberCep)
       setCep(null);
       setError(null);
       if (numberCep.length !== 0) {
@@ -26,8 +28,10 @@ function App() {
           setCep(data);
         }
       }
+      setRemoveLoading(false);
     } catch (error: any) {
       setError('Formato de CEP inválido.');
+      setRemoveLoading(false);
     }
   }
 
@@ -39,6 +43,7 @@ function App() {
   return (
     <div className='App'>
       <CardSearch loadCep={loadCep} handleClear={handleClear} />
+      {removeLoading && <Loading width="100px" />}
       <CardResult cep={cep} erro={error} />
     </div>
   )

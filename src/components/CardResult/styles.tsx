@@ -1,8 +1,21 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface CardSearchProps {
     cor: string;
 }
+
+const fadeInFadeOutRotate = keyframes`
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
 
 export const Container = styled.div<CardSearchProps>`
     width: 60%;
@@ -49,6 +62,10 @@ export const Container = styled.div<CardSearchProps>`
             .erro{
                 color: white;
             }
+
+            svg{
+                animation: ${fadeInFadeOutRotate} 1.5s ease infinite;
+            }
         }
     }
 
@@ -63,7 +80,5 @@ export const Container = styled.div<CardSearchProps>`
             .label { font-size: 1rem; }
             .info { font-size: 1rem; }
         }
-    }
-    
-      
+    } 
 `;

@@ -1,6 +1,7 @@
 import clipboardCopy from 'clipboard-copy';
-import { Button, Icon, LoadingIcon } from './styles';
+import { Button, Icon } from './styles';
 import { useState } from 'react';
+import Loading from '../Loading';
 
 interface ClipboardProps {
     text: string;
@@ -27,14 +28,14 @@ const ClipBoard = ({ text }: ClipboardProps) => {
                     console.error('Falha ao copiar para a área de transferência: ', error);
                 });
         }, 150);
-
-
     };
 
     return (
         <Button cor={copiado ? 'green' : 'white'} onClick={handleCopy}>
             {isLoading ? (
-                <LoadingIcon />
+                <div>
+                    <Loading width="55%" />
+                </div>
             ) : copiado ? (
                 <>
                     Copiado

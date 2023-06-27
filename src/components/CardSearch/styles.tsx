@@ -112,5 +112,4 @@ export const SearchDicas = styled.div`
   span{
     color: gray;
   }
-
 `;
