@@ -9,7 +9,7 @@ type ResultProps = {
 }
 
 const cardSearch = ({ cep, erro }: ResultProps) => {
-    const cor = erro ? "rgba(255, 0, 0, 0.6)" : "coral";
+    const cor = erro ? "rgba(255, 0, 0, 0.8)" : "#00cccc";
 
     if (cep !== null || erro !== null) {
         return (
@@ -17,22 +17,26 @@ const cardSearch = ({ cep, erro }: ResultProps) => {
                 <div className="content">
                     {cep && (
                         <>
-                            <div className="item">
-                                <div>
-                                    <span className="label">Rua: </span><span className="info">{cep.logradouro}</span>
+                            {cep.logradouro && (
+                                <div className="item">
+                                    <div>
+                                        <span className="label">Rua: </span><span className="info">{cep.logradouro}</span>
+                                    </div>
+                                    <div>
+                                        <ClipBoard text={cep.logradouro} />
+                                    </div>
                                 </div>
-                                <div>
-                                    <ClipBoard text={cep.logradouro} />
+                            )}
+                            {cep.bairro && (
+                                <div className="item">
+                                    <div>
+                                        <span className="label">Bairro: </span><span className="info">{cep.bairro}</span>
+                                    </div>
+                                    <div>
+                                        <ClipBoard text={cep.bairro} />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="item">
-                                <div>
-                                    <span className="label">Bairro: </span><span className="info">{cep.bairro}</span>
-                                </div>
-                                <div>
-                                    <ClipBoard text={cep.bairro} />
-                                </div>
-                            </div>
+                            )}
                             <div className="item">
                                 <div>
                                     <span className="label">Cidade: </span><span className="info">{cep.localidade}</span>

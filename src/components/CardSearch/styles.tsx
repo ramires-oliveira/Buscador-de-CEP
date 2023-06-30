@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 1rem;
   background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 30px 20px;
   border: none;
   border-radius: 5px;
@@ -37,7 +38,7 @@ export const Header = styled.div`
 
   svg{
     font-size: 3rem;
-    color: coral;
+    color: #00cccc;
   }
 
   @media(min-width: 360px) and (max-width: 430px){
@@ -73,7 +74,7 @@ export const SearchContent = styled.div`
   }
 
   button{
-    background-color: coral;
+    background-color: #00cccc;
     border: none;
     width: 55px;
     border-radius: 5px;
@@ -88,7 +89,7 @@ export const SearchContent = styled.div`
   }
 
   button:hover{
-    background-color: #E67147;
+    background-color: #009090;
   }
 
   @media (max-width: 350px){

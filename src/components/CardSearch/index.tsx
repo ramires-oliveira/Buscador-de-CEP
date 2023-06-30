@@ -13,7 +13,8 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
 
     const [numberCep, setNumberCep] = useState("");
 
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        console.log(event);
         if (event.key === "Enter") {
             loadCep(numberCep);
         }
@@ -37,7 +38,7 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
                 <GiBrazil />
             </Header>
             <SearchContent>
-                <input className='searchInput' value={numberCep} type="text" placeholder='Digite um cep' onChange={handleChange} onKeyDown={() => handleKeyDown} />
+                <input className='searchInput' value={numberCep} type="text" placeholder='Digite um cep' onChange={handleChange} onKeyDown={handleKeyDown} />
                 <button onClick={() => loadCep(numberCep)}>
                     <BsSearch />
                 </button>

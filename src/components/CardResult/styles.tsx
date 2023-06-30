@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-interface CardSearchProps {
+interface CardResultProps {
     cor: string;
 }
 
@@ -17,7 +17,7 @@ const fadeInFadeOutRotate = keyframes`
   }
 `;
 
-export const Container = styled.div<CardSearchProps>`
+export const Container = styled.div<CardResultProps>`
     width: 60%;
     max-width: 680px;
     display: flex;
