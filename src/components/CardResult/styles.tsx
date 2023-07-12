@@ -12,6 +12,7 @@ const fadeInFadeOutRotate = keyframes`
   from {
     transform: rotate(0deg);
   }
+  
   to {
     transform: rotate(360deg);
   }
@@ -53,13 +54,13 @@ export const Container = styled.div<CardResultProps>`
             font-size: 1.2rem;
         }
 
-        .contentErro{
+        .contentError{
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
 
-            .erro{
+            .error{
                 color: white;
             }
 

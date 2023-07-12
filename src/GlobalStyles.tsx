@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 
 :root {
-    --dark-color: #333; /* Cor para o tema escuro (valor padrão) */
-    --light-color: #f5f5f5; /* Cor para o tema claro */
+    --dark-color: #333;
+    --light-color: #f5f5f5;
     --dark: ${(props) => (props.theme.dark ? '1' : '0')};
 }
 
@@ -44,5 +44,4 @@ a {
 h1, h2, p, span {
     color: white;
 }
-
 `;

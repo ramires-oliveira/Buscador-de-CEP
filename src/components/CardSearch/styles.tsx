@@ -11,14 +11,14 @@ export const Container = styled.div<CardSearchProps>`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background-color: ${(props) => props.theme === true ? 'black' : 'white'};
+  background-color: ${(props) => props.theme === true ? `black` : `white`};
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   padding: 30px 20px;
   border: none;
   border-radius: 5px;
 
   p, span, h1, h2, h3{
-    color: ${(props) => props.theme === true ? 'white' : 'black'};
+    color: ${(props) => props.theme === true ? `white` : `black`};
   }
 
   @media (min-width: 550px) and (max-width: 800px){
@@ -110,7 +110,7 @@ export const SearchContent = styled.div`
   }
 `;
 
-export const SearchDicas = styled.div`
+export const SearchTip = styled.div`
   display: flex;
   flex-direction: column;
 

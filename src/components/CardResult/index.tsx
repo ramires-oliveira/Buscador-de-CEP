@@ -5,13 +5,13 @@ import { CgCloseO } from "react-icons/cg";
 
 type ResultProps = {
     cep: CepProps | null;
-    erro: string | null;
+    error: string | null;
 }
 
-const cardSearch = ({ cep, erro }: ResultProps) => {
-    const cor = erro ? "rgba(255, 0, 0, 0.8)" : "#00cccc";
+const cardSearch = ({ cep, error }: ResultProps) => {
+    const cor = error ? "rgba(255, 0, 0, 0.8)" : "#00cccc";
 
-    if (cep !== null || erro !== null) {
+    if (cep !== null || error !== null) {
         return (
             <Container cor={cor}>
                 <div className="content">
@@ -65,10 +65,10 @@ const cardSearch = ({ cep, erro }: ResultProps) => {
                             )}
                         </>
                     )}
-                    {erro && (
-                        <div className="contentErro">
+                    {error && (
+                        <div className="contentError">
                             <CgCloseO size={30} color={"#fff"} />
-                            <span className="erro">{erro}</span>
+                            <span className="error">{error}</span>
                         </div>
                     )}
                 </div>
