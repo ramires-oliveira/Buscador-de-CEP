@@ -46,7 +46,7 @@ function App() {
       <ToggleDark />
       <CardSearch loadCep={loadCep} handleClear={handleClear} />
       {removeLoading && <Loading width="100px" />}
-      <CardResult cep={cep} erro={error} />
+      <CardResult cep={cep} error={error} />
     </div>
   )
 }

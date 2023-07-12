@@ -17,8 +17,8 @@ export function ToggleDark() {
 
   return (
     <Container>
-      <Content>
-        <span className='title'>Modo noturno</span>
+      <Content isOn={isOn}>
+        <span className='title'>Modo Noturno</span>
         <Toggle isOn={isOn}>
           <div className='switch' onClick={handleToggle}>
             <span className='slider'>{isOn ? <BsFillMoonStarsFill /> : <BsFillSunFill />}</span>

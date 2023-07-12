@@ -1,4 +1,4 @@
-import { Container, SearchContent, SearchDicas, Header } from './styles';
+import { Container, SearchContent, SearchTip, Header } from './styles';
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GiBrazil } from "react-icons/gi";
@@ -13,9 +13,9 @@ type SearchProps = {
 const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
 
     const [numberCep, setNumberCep] = useState("");
+    const isDarkMode = useSelector((state: any) => state.darkMode.mode);
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        console.log(event);
         if (event.key === "Enter") {
             loadCep(numberCep);
         }
@@ -23,7 +23,7 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
 
     const handleChange = (event: { target: { value: any; }; }) => {
         const inputValue = event.target.value;
-        const newValue = inputValue.replace(/[^0-9-]/g, ''); // Remove todos os caracteres que não sejam números ou '-'
+        const newValue = inputValue.replace(/[^0-9-]/g, ''); //Remove todos os caracteres que não sejam números ou '-'
         setNumberCep(newValue)
     };
 
@@ -31,8 +31,6 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
         setNumberCep("");
         handleClear();
     }
-
-    const isDarkMode = useSelector((state: any) => state.darkMode.mode);
     
     return (
         <Container theme={isDarkMode}>
@@ -49,11 +47,11 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
                     <AiOutlineClear />
                 </button>
             </SearchContent>
-            <SearchDicas>
+            <SearchTip>
                 <span>Dicas para pesquisa do CEP:</span>
                 <span>Digite o CEP utilizando 8 digitos, com ou sem hífen (-).</span>
                 <span>Ex: 37130000 ou 37130-000</span>
-            </SearchDicas>
+            </SearchTip>
         </Container>
     )
 }

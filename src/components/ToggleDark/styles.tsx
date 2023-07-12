@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-interface ToggleProps {
+interface ToggleDarkProps {
   isOn: boolean;
 }
 
@@ -10,19 +10,19 @@ export const Container = styled.div`
   justify-content: end;
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<ToggleDarkProps>`
   display: flex; 
   flex-direction: column; 
   align-items: center;
 
   .title{
-    color: black; 
+    color: ${({ isOn }) => (isOn ? `black` : `white`)};
     font-weight: bold; 
     font-size: 20px;
   }
 `;
 
-export const Toggle = styled.div<ToggleProps>`
+export const Toggle = styled.div<ToggleDarkProps>`
   display: flex;
   max-width: 8rem;
   min-width: 8rem;
@@ -47,7 +47,7 @@ export const Toggle = styled.div<ToggleProps>`
     .slider {
       position: absolute;
       top: 0.20rem;
-      left: ${({ isOn }) => (isOn ? '6.5rem;' : '0.3rem')};
+      left: ${({ isOn }) => (isOn ? `6.5rem;` : `0.3rem`)};
       right: 0;
       bottom: 0;
       border-radius: 1rem;
