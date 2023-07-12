@@ -49,7 +49,7 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
             </SearchContent>
             <SearchTip>
                 <span>Dicas para pesquisa do CEP:</span>
-                <span>Digite o CEP utilizando 8 digitos, com ou sem hífen (-).</span>
+                <span>Digite o CEP utilizando 8 dígitos, com ou sem hífen (-).</span>
                 <span>Ex: 37130000 ou 37130-000</span>
             </SearchTip>
         </Container>
