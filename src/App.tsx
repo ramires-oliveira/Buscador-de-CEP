@@ -4,13 +4,14 @@ import { useState } from "react";
 import { CepProps } from "./types/cep";
 import './App.css'
 import Loading from "./components/Loading";
+import { ToggleDark } from './components/ToggleDark';
 
 function App() {
 
   const [cep, setCep] = useState<CepProps | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [removeLoading, setRemoveLoading] = useState(false);
-  
+
   const loadCep = async (numberCep: string) => {
     setRemoveLoading(true)
     try {
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <div className='App'>
+      <ToggleDark />
       <CardSearch loadCep={loadCep} handleClear={handleClear} />
       {removeLoading && <Loading width="100px" />}
       <CardResult cep={cep} erro={error} />

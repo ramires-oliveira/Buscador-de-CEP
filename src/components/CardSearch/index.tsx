@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { GiBrazil } from "react-icons/gi";
 import { AiOutlineClear } from "react-icons/ai";
+import { useSelector } from 'react-redux';
 
 type SearchProps = {
     loadCep: (numberCep: string) => Promise<void>;
@@ -31,8 +32,10 @@ const cardSearch = ({ loadCep, handleClear }: SearchProps) => {
         handleClear();
     }
 
+    const isDarkMode = useSelector((state: any) => state.darkMode.mode);
+    
     return (
-        <Container>
+        <Container theme={isDarkMode}>
             <Header>
                 <h1>Buscador de CEP</h1>
                 <GiBrazil />
